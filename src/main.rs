@@ -3,7 +3,7 @@ use std::fs::{metadata, read_to_string};
 use crate::{
     day::Day,
     day_01::Day01,
-    // day_02::Day02,
+    day_02::Day02,
     // day_03::Day03,
     // day_04::Day04,
     // day_05::Day05,
@@ -18,7 +18,7 @@ use crate::{
 
 mod day;
 mod day_01;
-// mod day_02;
+mod day_02;
 // mod day_03;
 // mod day_04;
 // mod day_05;
@@ -45,7 +45,7 @@ fn run_day<DAY: Day>(input: &str) {
 fn run_day_number(number: u8, input: &str) {
     match number {
         1 => run_day::<Day01>(&input),
-        2 => {}  // run_day::<Day02>(&input),
+        2 => run_day::<Day02>(&input),
         3 => {}  // run_day::<Day03>(&input),
         4 => {}  // run_day::<Day04>(&input),
         5 => {}  // run_day::<Day05>(&input),
@@ -61,7 +61,9 @@ fn run_day_number(number: u8, input: &str) {
 }
 
 fn main() {
-    println!("\n========================= \x1b[96mAdvent of Code 2025\x1b[0m =========================\n");
+    println!(
+        "\n========================= \x1b[96mAdvent of Code 2025\x1b[0m =========================\n"
+    );
 
     let start_ts = std::time::Instant::now();
 
@@ -93,14 +95,14 @@ fn main() {
     let day = args.get(2).and_then(|r| r.parse::<u8>().ok());
 
     if let Some(day) = day {
-        run_day_number(day, &input);
+        run_day_number(day, &input.trim());
     } else {
         for n in 1..=12 {
             let Ok(day_input) = read_to_string(format!("{}/{:02}.txt", input, n)) else {
                 eprintln!("Couldn't read input file for day {}", n);
                 continue;
             };
-            run_day_number(n, &day_input);
+            run_day_number(n, &day_input.trim());
         }
     }
 
