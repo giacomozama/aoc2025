@@ -4,7 +4,7 @@ use crate::{
     day::Day,
     day_01::Day01,
     day_02::Day02,
-    // day_03::Day03,
+    day_03::Day03,
     // day_04::Day04,
     // day_05::Day05,
     // day_06::Day06,
@@ -19,7 +19,7 @@ use crate::{
 mod day;
 mod day_01;
 mod day_02;
-// mod day_03;
+mod day_03;
 // mod day_04;
 // mod day_05;
 // mod day_06;
@@ -34,8 +34,9 @@ fn run_day<DAY: Day>(input: &str) {
     let parsed_input = DAY::parse_input(input);
     let part_1_output = DAY::part_1(&parsed_input);
     let part_2_output = DAY::part_2(&parsed_input, &part_1_output);
+
     println!(
-        "[ Day {} ] || [ Part 1: \x1b[95m{:16}\x1b[0m ] [ Part 2: \x1b[95m{:16}\x1b[0m ]",
+        "[ Day \x1b[93m{}\x1b[0m ] || [ Part 1: \x1b[95m{:16}\x1b[0m ] [ Part 2: \x1b[95m{:16}\x1b[0m ]",
         DAY::id(),
         part_1_output,
         part_2_output
@@ -46,7 +47,7 @@ fn run_day_number(number: u8, input: &str) {
     match number {
         1 => run_day::<Day01>(&input),
         2 => run_day::<Day02>(&input),
-        3 => {}  // run_day::<Day03>(&input),
+        3 => run_day::<Day03>(&input),
         4 => {}  // run_day::<Day04>(&input),
         5 => {}  // run_day::<Day05>(&input),
         6 => {}  // run_day::<Day06>(&input),
