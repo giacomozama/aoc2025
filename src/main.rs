@@ -6,7 +6,7 @@ use crate::{
     day_02::Day02,
     day_03::Day03,
     day_04::Day04,
-    // day_05::Day05,
+    day_05::Day05,
     // day_06::Day06,
     // day_07::Day07,
     // day_08::Day08,
@@ -21,7 +21,7 @@ mod day_01;
 mod day_02;
 mod day_03;
 mod day_04;
-// mod day_05;
+mod day_05;
 // mod day_06;
 // mod day_07;
 // mod day_08;
@@ -49,7 +49,7 @@ fn run_day_number(number: u8, input: &str) {
         2 => run_day::<Day02>(&input),
         3 => run_day::<Day03>(&input),
         4 => run_day::<Day04>(&input),
-        5 => {}  // run_day::<Day05>(&input),
+        5 => run_day::<Day05>(&input),
         6 => {}  // run_day::<Day06>(&input),
         7 => {}  // run_day::<Day07>(&input),
         8 => {}  // run_day::<Day08>(&input),
