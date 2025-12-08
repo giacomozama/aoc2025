@@ -41,7 +41,7 @@ impl Day for Day01 {
         result
     }
 
-    fn part_2(input: &Self::Input, _: &Self::Output1) -> Self::Output2 {
+    fn part_2(input: &Self::Input, _: Self::Output1) -> Self::Output2 {
         let mut position = 50i16;
         let mut result = 0i16;
 

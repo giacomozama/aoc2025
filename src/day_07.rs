@@ -61,7 +61,7 @@ impl Day for Day07 {
         result
     }
 
-    fn part_2(input: &Self::Input, _: &Self::Output1) -> Self::Output2 {
+    fn part_2(input: &Self::Input, _: Self::Output1) -> Self::Output2 {
         let (start, board) = input;
 
         let mut dp: Vec<u64> = iter::repeat(0).take(board[0].len()).collect();

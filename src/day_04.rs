@@ -45,7 +45,7 @@ impl Day for Day04 {
         result
     }
 
-    fn part_2(input: &Self::Input, _: &Self::Output1) -> Self::Output2 {
+    fn part_2(input: &Self::Input, _: Self::Output1) -> Self::Output2 {
         let mut queue = VecDeque::<(usize, usize)>::new();
 
         for y in 0..input.len() {

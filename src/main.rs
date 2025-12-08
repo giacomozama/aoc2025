@@ -1,4 +1,4 @@
-use std::fs::{metadata, read_to_string};
+use std::{fmt::Display, fs::{metadata, read_to_string}};
 
 use crate::{
     day::Day,
@@ -33,12 +33,13 @@ mod day_07;
 fn run_day<DAY: Day>(input: &str) {
     let parsed_input = DAY::parse_input(input);
     let part_1_output = DAY::part_1(&parsed_input);
-    let part_2_output = DAY::part_2(&parsed_input, &part_1_output);
+    let part_1_display = part_1_output.to_string();
+    let part_2_output = DAY::part_2(&parsed_input, part_1_output);
 
     println!(
         "[ Day \x1b[93m{}\x1b[0m ] || [ Part 1: \x1b[95m{:16}\x1b[0m ] [ Part 2: \x1b[95m{:16}\x1b[0m ]",
         DAY::id(),
-        part_1_output,
+        part_1_display,
         part_2_output
     );
 }

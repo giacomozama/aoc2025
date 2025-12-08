@@ -92,7 +92,7 @@ impl Day for Day05 {
         }
     }
 
-    fn part_2(_: &Self::Input, part_1_output: &Self::Output1) -> Self::Output2 {
+    fn part_2(_: &Self::Input, part_1_output: Self::Output1) -> Self::Output2 {
         (&part_1_output.merged_ranges)
             .iter()
             .map(|&(start, end)| end - start + 1)

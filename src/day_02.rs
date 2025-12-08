@@ -44,7 +44,7 @@ impl Day for Day02 {
         result
     }
 
-    fn part_2(input: &Self::Input, _: &Self::Output1) -> Self::Output2 {
+    fn part_2(input: &Self::Input, _: Self::Output1) -> Self::Output2 {
         let mut result = 0u64;
 
         for &(from, to) in input {

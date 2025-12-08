@@ -26,7 +26,7 @@ impl Day for Day03 {
         solve_for(input, 2)
     }
 
-    fn part_2(input: &Self::Input, _: &Self::Output1) -> Self::Output2 {
+    fn part_2(input: &Self::Input, _: Self::Output1) -> Self::Output2 {
         solve_for(input, 12)
     }
 }

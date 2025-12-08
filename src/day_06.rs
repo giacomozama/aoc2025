@@ -47,7 +47,7 @@ impl Day for Day06 {
         result
     }
 
-    fn part_2(input: &Self::Input, _: &Self::Output1) -> Self::Output2 {
+    fn part_2(input: &Self::Input, _: Self::Output1) -> Self::Output2 {
         let mut lines = input.lines();
 
         let operand_lines: Vec<_> = lines.by_ref().take(4).collect();
